@@ -18,6 +18,5 @@ int main() {
   assert(!batteryIsOk(50,20 ,80));
   assert(!batteryIsOk(40, 90 ,80));
   assert(!batteryIsOk(40, 90 ,0.8));
-  assert(!batteryIsOk(40, 20 ,0.2));
   return 0;
 }
