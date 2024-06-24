@@ -12,10 +12,12 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
     printf("Charge Rate out of range!\n");
     return 0;
   }
-  return 1;
 }
 
 int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+  assert(!batteryIsOk(50,20 ,80));
+  assert(!batteryIsOk(40, 90 ,80));
+  assert(!batteryIsOk(40, 90 ,0.8));
+  assert(!batteryIsOk(40, 20 ,0.2));
+  return 0;
 }
