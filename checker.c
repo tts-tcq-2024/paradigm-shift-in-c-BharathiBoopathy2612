@@ -12,5 +12,6 @@ if((temperature < 0 || temperature > 45) && (soc < 20 || soc > 80) && (chargeRat
 }
 
 int main() {
+  assert(batteryIsOk(25, 70, 0.7));
   assert(!batteryIsOk(50, 85, 0));
 }
