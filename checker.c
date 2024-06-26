@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
 
-int 
-
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   int n = 0;
   if(temperature < 0 || temperature > 45) {
