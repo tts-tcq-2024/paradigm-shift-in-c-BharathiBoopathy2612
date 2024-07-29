@@ -9,6 +9,5 @@ void testIsChargeRateOk() {
 
 int main() {
     testIsChargeRateOk();
-
     return 0;
 }
