@@ -9,6 +9,6 @@ void testIsChargeRateOk() {
 
 int main() {
     testIsChargeRateOk();
-    printf("All charge rate tests passed.\n");
+
     return 0;
 }
