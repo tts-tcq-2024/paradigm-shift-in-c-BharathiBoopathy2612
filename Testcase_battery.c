@@ -1,4 +1,4 @@
-#include "BatteryMangement.h"
+#include "BatteryManagement.h"
 #include <assert.h>
 
 // Test cases for batteryIsOk function
