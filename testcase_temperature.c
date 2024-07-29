@@ -10,6 +10,6 @@ void testIsTemperatureOk() {
 
 int main() {
     testIsTemperatureOk();
-    printf("All temperature tests passed.\n");
+    
     return 0;
 }
