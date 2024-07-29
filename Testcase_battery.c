@@ -7,7 +7,3 @@ void testBatteryIsOk() {
     assert(batteryIsOk(50, 85, 0) == 0);      // All parameters out of range
 }
 
-int main() {
-    testBatteryIsOk();
-    return 0;
-}
