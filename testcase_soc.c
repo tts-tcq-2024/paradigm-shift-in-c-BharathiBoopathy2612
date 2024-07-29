@@ -10,6 +10,6 @@ void testIsSocOk() {
 
 int main() {
     testIsSocOk();
-    printf("All SOC tests passed.\n");
+   
     return 0;
 }
