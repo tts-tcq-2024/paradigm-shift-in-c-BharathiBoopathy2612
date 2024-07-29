@@ -9,6 +9,5 @@ void testBatteryIsOk() {
 
 int main() {
     testBatteryIsOk();
-    printf("All battery tests passed.\n");
     return 0;
 }
