@@ -8,7 +8,3 @@ void testIsSocOk() {
     assert(isSocOk(90) == 0);     // Above range
 }
 
-int main() {
-    testIsSocOk();
-    return 0;
-}
