@@ -7,7 +7,3 @@ void testIsChargeRateOk() {
     assert(isChargeRateOk(0.9) == 0);     // Above range
 }
 
-int main() {
-    testIsChargeRateOk();
-    return 0;
-}
