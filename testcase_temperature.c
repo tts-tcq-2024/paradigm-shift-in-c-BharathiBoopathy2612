@@ -10,6 +10,5 @@ void testIsTemperatureOk() {
 
 int main() {
     testIsTemperatureOk();
-    
     return 0;
 }
