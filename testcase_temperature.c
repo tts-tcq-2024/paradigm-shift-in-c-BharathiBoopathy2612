@@ -8,7 +8,4 @@ void testIsTemperatureOk() {
     assert(isTemperatureOk(50) == 0);     // Above range
 }
 
-int main() {
-    testIsTemperatureOk();
-    return 0;
-}
+
