@@ -10,6 +10,5 @@ void testIsSocOk() {
 
 int main() {
     testIsSocOk();
-   
     return 0;
 }
