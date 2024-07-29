@@ -1,4 +1,4 @@
-#include "battery.h"
+#include "BatteryManagement.h"
 #include "temperature.h"
 #include "soc.h"
 #include "charge_rate.h"
