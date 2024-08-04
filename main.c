@@ -1,19 +1,13 @@
+// main.c
 #include <assert.h>
-#include <stdio.h>
-#include "temperature.h"
-#include "soc.h"
-#include "charge_rate.h"
+#include "battery_parameters.h"
 
 int main() {
-  assert(isTemperatureOk(25)); // Temperature normal
-  assert(!isTemperatureOk(50)); // Temperature too high
-
-  assert(isSocOk(70)); // SoC normal
-  assert(!isSocOk(85)); // SoC too high
-
-  assert(isChargeRateOk(0.7)); // Charge rate normal
-  assert(!isChargeRateOk(0.9)); // Charge rate too high
-
+  assert(batteryIsOk(25, 70, 0.7)); // All parameters are normal
+  assert(!batteryIsOk(50, 85, 0));  // Temperature and SoC out of range
+  assert(batteryIsOk(2, 22, 0.7));  // All parameters within warning levels
+  assert(batteryIsOk(43, 75, 0.76)); // Temperature and SoC approaching high limit
+  
   printf("All tests passed!\n");
   return 0;
 }
