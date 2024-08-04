@@ -1,5 +1,5 @@
 #include "charge_rate.h"
-#include "parameters.h"
+#include "battery_parameters.h"
 
 int isChargeRateOk(float chargeRate) {
   if (!isWithinRange(chargeRate, 0, CHARGE_RATE_UPPER_LIMIT, "Charge Rate")) {
