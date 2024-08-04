@@ -1,22 +1,25 @@
-#ifndef BATTERY_PARAMETERS_H
-#define BATTERY_PARAMETERS_H
+#include <stdio.h>
+#include "parameters.h"
 
-// Constants defining the normal operating ranges and tolerance for warnings
-#define TEMPERATURE_LOWER_LIMIT 0
-#define TEMPERATURE_UPPER_LIMIT 45
-#define TEMPERATURE_WARNING_TOLERANCE 2.25
+// Check if a value is within the specified range
+int isWithinRange(float value, float lowerLimit, float upperLimit, const char* parameterName) {
+  if (value < lowerLimit) {
+    printf("%s out of range! Too low!\n", parameterName);
+    return 0;
+  }
+  if (value > upperLimit) {
+    printf("%s out of range! Too high!\n", parameterName);
+    return 0;
+  }
+  return 1;
+}
 
-#define SOC_LOWER_LIMIT 20
-#define SOC_UPPER_LIMIT 80
-#define SOC_WARNING_TOLERANCE 4
-
-#define CHARGE_RATE_UPPER_LIMIT 0.8
-#define CHARGE_RATE_WARNING_TOLERANCE 0.04
-
-
-int isTemperatureOk(float temperature);
-int isSocOk(float soc);
-int isChargeRateOk(float chargeRate);
-int batteryIsOk(float temperature, float soc, float chargeRate);
-
-#endif
+// Check if a value is approaching a limit within a specified tolerance
+int isApproachingLimit(float value, float lowerLimit, float upperLimit, float tolerance, const char* parameterName) {
+  if (value <= lowerLimit + tolerance) {
+    GENERIC_WARNING("Approaching low limit");
+  } else if (value >= upperLimit - tolerance) {
+    GENERIC_WARNING("Approaching high limit");
+  }
+  return 1;
+}
