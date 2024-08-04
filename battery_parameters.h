@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "parameters.h"
+#include "battery_parameters.h"
 
 
 int isWithinRange(float value, float lowerLimit, float upperLimit, const char* parameterName) {
