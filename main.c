@@ -1,4 +1,5 @@
 #include <assert.h>
+#include "battery_parameters.h"
 
 int main()
 {
