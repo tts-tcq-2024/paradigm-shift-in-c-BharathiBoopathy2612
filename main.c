@@ -1,13 +1,19 @@
 #include <assert.h>
-#include "battery_parameters.h"
+#include <stdio.h>
+#include "temperature.h"
+#include "soc.h"
+#include "charge_rate.h"
 
-int main()
-{
-  assert(batteryIsOk(25, 70, 0.7)); 
-  assert(!batteryIsOk(50, 85, 0));  
-  assert(batteryIsOk(2, 22, 0.7));  
-  assert(batteryIsOk(43, 75, 0.76)); 
-  
+int main() {
+  assert(isTemperatureOk(25)); 
+  assert(!isTemperatureOk(50)); 
+
+  assert(isSocOk(70));
+  assert(!isSocOk(85)); 
+
+  assert(isChargeRateOk(0.7)); 
+  assert(!isChargeRateOk(0.9)); 
+
   printf("All tests passed!\n");
   return 0;
 }
