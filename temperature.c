@@ -1,5 +1,5 @@
 #include "temperature.h"
-#include "battery_parameters.h"
+#include "parameters.h"
 
 int isTemperatureOk(float temperature) {
   if (!isWithinRange(temperature, TEMPERATURE_LOWER_LIMIT, TEMPERATURE_UPPER_LIMIT, "Temperature")) {
