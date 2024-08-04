@@ -1,5 +1,5 @@
-#ifndef BATTERY_PARAMETERS_H
-#define BATTERY_PARAMETERS_H
+#ifndef PARAMETERS_H
+#define PARAMETERS_H
 
 
 #define GENERIC_WARNING(message) printf("Warning: %s\n", message)
