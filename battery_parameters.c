@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include "battery_parameters.h"
 
