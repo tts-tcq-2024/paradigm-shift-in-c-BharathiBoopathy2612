@@ -1,11 +1,9 @@
-#ifndef PARAMETERS_H
-#define PARAMETERS_H
+#ifndef BATTERY_PARAMETERS_H
+#define BATTERY_PARAMETERS_H
 
+#define WARNING_TOLERANCE_PERCENTAGE 0.05
 
-#define GENERIC_WARNING(message) printf("Warning: %s\n", message)
-
-// Function declarations for generic parameter checking
 int isWithinRange(float value, float lowerLimit, float upperLimit, const char* parameterName);
 int isApproachingLimit(float value, float lowerLimit, float upperLimit, float tolerance, const char* parameterName);
 
-#endif
+#endif 
