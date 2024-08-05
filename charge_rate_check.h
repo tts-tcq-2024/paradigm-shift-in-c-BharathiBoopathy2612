@@ -6,4 +6,4 @@
 
 int validateChargeRate(float chargeRate);
 
-#endif // CHARGE_RATE_CHECK_H
+#endif 
