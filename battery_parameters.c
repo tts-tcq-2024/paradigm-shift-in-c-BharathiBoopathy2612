@@ -2,23 +2,23 @@
 #include "battery_parameters.h"
 #include "message_translations.h"
 
-int isWithinRange(float value, float lowerLimit, float upperLimit, const char* parameterName) {
-    if (value < lowerLimit) {
-        printf("%s\n", translateMessage("out of range! Too low!"));
+int checkValueInRange(float value, float minLimit, float maxLimit, const char* paramName) {
+    if (value < minLimit) {
+        printf("%s %s\n", paramName, translateMessage("is out of range! Too low!"));
         return 0;
     }
-    if (value > upperLimit) {
-        printf("%s\n", translateMessage("out of range! Too high!"));
+    if (value > maxLimit) {
+        printf("%s %s\n", paramName, translateMessage("is out of range! Too high!"));
         return 0;
     }
     return 1;
 }
 
-int isApproachingLimit(float value, float lowerLimit, float upperLimit, float tolerance, const char* parameterName) {
-    if (value <= lowerLimit + tolerance) {
-        printf("%s: %s\n", translateMessage("Warning"), translateMessage("Approaching low limit"));
-    } else if (value >= upperLimit - tolerance) {
-        printf("%s: %s\n", translateMessage("Warning"), translateMessage("Approaching high limit"));
+int checkWarningLevel(float value, float minLimit, float maxLimit, float tolerance, const char* paramName) {
+    if (value <= minLimit + tolerance) {
+        printf("%s: %s %s\n", translateMessage("Warning"), paramName, translateMessage("is approaching the low limit!"));
+    } else if (value >= maxLimit - tolerance) {
+        printf("%s: %s %s\n", translateMessage("Warning"), paramName, translateMessage("is approaching the high limit!"));
     }
     return 1;
 }
