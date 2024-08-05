@@ -1,9 +1,9 @@
-#ifndef CHARGE_RATE_CHECK_H
-#define CHARGE_RATE_CHECK_H
+#include "charge_rate.h"
+#include "parameters.h"
 
-#define CHARGE_RATE_MAX_LIMIT 0.8
-#define CHARGE_RATE_WARNING_TOLERANCE (CHARGE_RATE_MAX_LIMIT * WARNING_TOLERANCE_PERCENTAGE)
-
-int validateChargeRate(float chargeRate);
-
-#endif 
+int isChargeRateOk(float chargeRate) {
+  if (!isWithinRange(chargeRate, 0, CHARGE_RATE_UPPER_LIMIT, "Charge Rate")) {
+    return 0;
+  }
+  return isApproachingLimit(chargeRate, 0, CHARGE_RATE_UPPER_LIMIT, CHARGE_RATE_WARNING_TOLERANCE, "Charge Rate");
+}
