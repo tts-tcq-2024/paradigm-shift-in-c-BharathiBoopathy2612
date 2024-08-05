@@ -1,19 +1,38 @@
 #include <assert.h>
 #include <stdio.h>
-#include "temperature.h"
-#include "soc.h"
-#include "charge_rate.h"
+#include "temperature_check.h"
+#include "soc_check.h"
+#include "charge_rate_check.h"
+#include "language_settings.h"
 
 int main() {
-  assert(isTemperatureOk(25)); 
-  assert(!isTemperatureOk(50)); 
+    // Set language to English
+    currentLanguage = ENGLISH;
 
-  assert(isSocOk(70));
-  assert(!isSocOk(85)); 
+    assert(isTemperatureOk(25)); 
+    assert(!isTemperatureOk(50)); 
 
-  assert(isChargeRateOk(0.7)); 
-  assert(!isChargeRateOk(0.9)); 
+    assert(isSocOk(70));
+    assert(!isSocOk(85)); 
 
-  printf("All tests passed!\n");
-  return 0;
+    assert(isChargeRateOk(0.7)); 
+    assert(!isChargeRateOk(0.9)); 
+
+    printf("All tests passed!\n");
+
+    // Set language to German and run tests again
+    currentLanguage = GERMAN;
+
+    assert(isTemperatureOk(25)); 
+    assert(!isTemperatureOk(50)); 
+
+    assert(isSocOk(70));
+    assert(!isSocOk(85)); 
+
+    assert(isChargeRateOk(0.7)); 
+    assert(!isChargeRateOk(0.9)); 
+
+    printf("All tests passed in German!\n");
+
+    return 0;
 }
